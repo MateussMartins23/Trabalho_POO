@@ -145,6 +145,13 @@ public class Entrada {
         System.out.println("Área cadastrada com sucesso!");
     }
 
+    public static void cadIngressante(Sistema s,Scanner input){
+        String nome = Entrada.lerLinha("Digite o nome do ingressante: ",input);
+        String matricula=Entrada.lerLinha("Digite a matrícula do ingressante: ",input);
+        int semestre=Entrada.lerInteiro("Digite o semestre de ingresso: ",input);
+        Ingressante a=new Ingressante(nome,matricula,semestre);
+
+    }
 
 
 }

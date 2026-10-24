@@ -9,4 +9,8 @@ public class Concluinte extends Aluno{
         this.notaFormacaoGeral=0;
     }
 
+
+    public String toString() {
+        return super.toString() + " - CONCLUINTE";
+    }
 }
