@@ -3,9 +3,16 @@ public class Aluno {
     private String matricula;
     private boolean questionarioRespondido;
 
-    public Aluno(){
+   public Aluno(String n, String m){
+       this.nome=n;
+       this.matricula=m;
 
+   }
+
+    public String toString(){
+        return this.nome + " (" + this.matricula + ")";
     }
+
 
 
 
