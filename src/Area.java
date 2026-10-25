@@ -12,7 +12,7 @@ public class Area {
     }
 
     public String toString() {
-        return this.nome + " (" + this.codigo + ")";
+        return this.nome + " - " + this.codigo ;
     }
 
     public void adicionarCurso(Curso c){
