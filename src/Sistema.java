@@ -21,10 +21,15 @@ public class Sistema {
         a.adicionarCurso(c);
 
     }
-
     public void cadastrarAluno(Aluno a,Curso c){
         this.alunos.add(a);
         c.adicionarAluno(a);
+    }
+
+    public void listAreas(){
+        for(Area a : this.areas){
+            System.out.println(a.toString());
+        }
     }
 
 }
