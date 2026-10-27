@@ -27,6 +27,7 @@ public class Sistema {
     }
 
     public void listAreas(){
+        System.out.println("Áreas cadastradas:");
         for(Area a : this.areas){
             System.out.println(a.toString());
         }

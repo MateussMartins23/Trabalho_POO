@@ -4,6 +4,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = Entrada.abrirEntrada();
         Sistema s = new Sistema();
+        Entrada.cadArea(s,input);
+        s.listAreas();
         int op = Entrada.menu(input);
 
         while (op != 0) {
