@@ -150,7 +150,6 @@ public class Entrada {
         String matricula=Entrada.lerLinha("Digite a matrícula do ingressante: ",input);
         int semestre=Entrada.lerInteiro("Digite o semestre de ingresso: ",input);
         Ingressante a=new Ingressante(nome,matricula,semestre);
-
     }
 
 

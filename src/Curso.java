@@ -4,19 +4,20 @@ public class Curso {
     private String codigo;
     private String nome;
     private ArrayList<Aluno> alunos;
-//puxa ALUNO mas nao sei como que ta a classe se ja tem as coisas
+
+
     public Curso(String codigo, String nome){
         this.codigo = codigo;
         this.nome = nome;
         this.alunos = new ArrayList<>();
     }
 
-    public double conceitoEnade{
+    public double conceitoEnade(){
         double media = this.mediaSimples();
 
-        if (media < 2.0) {  //essa parte eu n entendi mt bem se é só isso msm
-            return 1;
-        } else if (media < 4.0) {
+        if (media < 2.0) {
+            return 1;}
+        else if (media < 4.0) {
             return 2;
         } else if (media < 6.0) {
             return 3;
@@ -26,13 +27,14 @@ public class Curso {
             return 5;
         }
     }
-    public double mediaSimples{
+
+    public double mediaSimples(){
         double soma = 0;
         int qtd = 0;
 
         for (Aluno a : this.alunos) {
             if (a instanceof Concluinte c) {
-                soma += c.calcularNota(); //calcularNota vai ter que sair da classe concluinte ta
+                soma += c.calcularNota();
                 qtd++;
             }
         }
@@ -57,7 +59,7 @@ public class Curso {
         ArrayList<Ingressante> resultado = new ArrayList<>();
 
         for (Ingressante i : this.ingressantes()) {
-            if (i.getSemIngresso() == semestre) { //tem que puxar quem é sem ingresso de fora.
+            if (i.getSemIngresso() == semestre) {
                 resultado.add(i);
             }
         }
@@ -74,7 +76,6 @@ public class Curso {
     }
 
 
-    //métodos publicos de informação, colocar print? pra ficar bonitinho
     public String getCodigo() {
         return this.codigo;
     }
