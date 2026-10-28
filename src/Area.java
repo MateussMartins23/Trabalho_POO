@@ -19,7 +19,15 @@ public class Area {
         this.cursos.add(c);
 
     }
+    public String getNome() {
+        return this.nome;
+    }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
 
-
+    public ArrayList<Curso> getCursos() {
+        return this.cursos;
+    }
 }

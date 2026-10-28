@@ -14,7 +14,7 @@ public class Main {
                     Entrada.menu_cadastro(s, input);
                     break;
                 case 2:
-                    //Entrada.menu_relatorios(s, input);
+                    //Entrada.menu_relatorios(s, input); //tirar comentario
                     break;
                 default:
                     System.out.println("Opção inválida.");
