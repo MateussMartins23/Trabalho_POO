@@ -49,8 +49,7 @@ public class Entrada {
     public static String lerLinha(String msg, Scanner input) {
         // Imprime uma mensagem ao usuário, lê uma e retorna esta linha
         System.out.print(msg);
-        String linha = input.nextLine();
-        return linha;
+        return input.nextLine();
     }
 
     /**
@@ -209,4 +208,4 @@ public class Entrada {
 
 
 
-}
+}}

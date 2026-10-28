@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 
-public class Sistema
-import java.util.ArrayList;
-
-public class Sistema {
+    public class Sistema {
     private ArrayList<Area> areas;
     private ArrayList<Curso> cursos;
     private ArrayList<Aluno> alunos;
