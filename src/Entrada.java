@@ -2,6 +2,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 /**
  * Classe com as rotinas de entrada e saída do projeto
@@ -150,7 +151,62 @@ public class Entrada {
         String matricula=Entrada.lerLinha("Digite a matrícula do ingressante: ",input);
         int semestre=Entrada.lerInteiro("Digite o semestre de ingresso: ",input);
         Ingressante a=new Ingressante(nome,matricula,semestre);
+
     }
+    public static void cadCurso(Sistema s, Scanner input) {
+        String nome = Entrada.lerLinha("Digite o nome do curso: ", input);
+        String codigo = Entrada.lerLinha("Digite o código do curso: ", input);
+        Entrada.listarAreas(s);
+        String codArea = Entrada.lerLinha("Digite o código da área do curso: ", input);
+        Area a = s.buscarAreaPorCodigo(codArea);
+        if (a == null) {
+            System.out.println("Área não encontrada.");
+            return;
+        }
+        s.cadastrarCurso(new Curso(nome, codigo), a);
+        System.out.println("Curso cadastrado com sucesso!");
+    }
+    public static void cadConcluinte(Sistema s, Scanner input) {
+        String nome = Entrada.lerLinha("Digite o nome do concluinte: ", input);
+        String matricula = Entrada.lerLinha("Digite a matrícula do concluinte: ", input);
+        Curso c = Entrada.lerCurso(s, input);
+        if (c == null) return;
+        s.cadastrarAluno(new Concluinte(nome, matricula), c);
+        System.out.println("Aluno concluinte cadastrado com sucesso!");
+    }
+    public static void cadResposta(Sistema s, Scanner input) {
+        System.out.println("Alunos cadastrados:");
+        for (Aluno a : s.getAlunos()) {
+            if (!a.isQuestionarioRespondido()) {
+                System.out.println(a);
+            }
+        }
+
+        String matricula = Entrada.lerLinha("Digite a matrícula do aluno que respondeu ao questionário: ", input);
+
+        Aluno aluno = s.buscarAluno(matricula);
+        if (aluno == null) {
+            System.out.println("Aluno não encontrado.");
+            return;
+        }
+        aluno.cadastrarResposta();
+        System.out.println("Resposta cadastrada com sucesso!");
+    }
+    public static void cadProva(Sistema s, Scanner input) {
+        System.out.println("Concluintes cadastrados:");
+        for (Aluno a : s.getAlunos()) {
+            if (a instanceof Concluinte c && !c.isPresente()) {
+                System.out.println(c);
+            }
+        }
+        String matricula = Entrada.lerLinha("Digite a matrícula do aluno que realizou a prova: ", input);
+        Aluno aluno = s.buscarAluno(matricula);
+        if (!(aluno instanceof Concluinte)) {
+            System.out.println("Concluinte não encontrado.");
+            return;
+
+    //-----------------------------------------------------------------
+
 
 
 }
